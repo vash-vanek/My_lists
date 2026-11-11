@@ -1,0 +1,60 @@
+/* Общие стили для всего документа */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 30px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Заголовки */
+h1, h2 {
+    color: #2c3e50;
+}
+
+/* Ссылки */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Навигация */
+nav {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Формы и поля */
+form {
+    margin: 20px 0;
+}
+
+input, textarea, select, button {
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
+button:hover {
+    background-color: #1c5980;
+}
+
+/* Сообщения об ошибках */
+.error {
+    color: red;
+    font-weight: bold;
+}

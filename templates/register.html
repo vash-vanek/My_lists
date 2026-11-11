@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <nav>
+        <a href="/main_page">Вернуться на главную</a><br><br>
+      
+        {% if error == 'exists' %}
+        <p style="color: red;">Пользователь с таким именем уже существует.</p>
+        {% endif %}
+        {% if error == 'short' %}
+        <p style="color: red;">Пароль должен быть не короче 8 символов.</p>
+        {% endif %}
+        {% if error == 'long' %}
+        <p style="color: red;">Пароль должен быть не длиннее 64 символов.</p>
+        {% endif %}
+        <form method="post" action="/register_page">
+            <input type="text" name="username" placeholder="Имя пользователя" autocomplete="new-password" required><br>
+            <input type="password" name="password" placeholder="Пароль" autocomplete="new-password" required><br>
+            <button type="submit">Зарегистрироваться</button><br><br>
+            <a href="/login_page">Войти в аккаунт</a>
+        </form>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои заметки</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Мои заметки</h1> 
+    <nav>
+        <a href="/main_page">Вернуться на главную</a> <br><br><br>
+        <a href="/page?sort=date_desc">Сначала новые</a>
+        <a href="/page?sort=date_asc">Сначала старые</a>
+        <a href="/page?sort=title_asc">По алфавиту</a>
+        <a href="/page?sort=title_desc">Против алфавита</a>
+        <br><br>
+
+        {% for note in notes %}
+        <a href="/edit_note_page/{{ note["id"] }}">{{ note["title"] }} — {{ note["created_at"] }}</a>
+        <p>{{ note["content"] }}</p><br>
+        {% endfor %}
+    </nav>
+
+</body>
+</html>

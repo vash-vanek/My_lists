@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Главная</h1>
+    <nav>
+        {% if logged_in == True %}
+        <a href="/logout">Выйти</a>
+        <a href="/settings_page">Настройки</a>
+        {% else %}
+        <a href = "/register_page">Регистрация</a> 
+        <a href = "/login_page">Вход</a>
+        {% endif %} <br>
+    <h3>  
+        | <a href="/add_note_page">Создать заметку</a>|
+        <a href="/page">Мои заметки</a>|
+        <a href="/create_category">Создать категорию</a>|
+        <a href="/all_categories_page">Мои категории</a>|
+        <a href="/search_page">Поиск</a>|
+    </h3></nav>
+
+</body>
+</html>

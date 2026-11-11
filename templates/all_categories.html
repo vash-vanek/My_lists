@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои Категории</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Мои Категории</h1> 
+    <nav>
+        
+        <a href="/main_page">Вернуться на главную</a> <br><br><br>
+        {% for cat in categories %}
+        <a href="/edit_category_page/{{ cat['id'] }}">{{ cat["name"] }} — {{ cat["notes_count"] }}</a><br>
+        {% endfor %}
+
+
+    </nav>
+
+</body>
+</html>

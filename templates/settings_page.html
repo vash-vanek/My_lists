@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройки</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Настройки</h1>
+    <nav>
+        <a href="/main_page">Вернуться на главную</a> <br><br><br>
+        <form method="post" action="/settings_page" enctype="multipart/form-data">
+            <label>Ваш логин: </label>
+            <input type="text" name="username" value="{{ user.username }}" autocomplete="off" required><br>
+
+            <label>Ваше имя: </label> 
+            <input type="text" name="display_name" value="{{ user.display_name }}" autocomplete="off" required><br>
+        
+            <label>Ваш аватар: </label><br> 
+            <img src="/static/{{ user.avatar }}">
+
+            <input type="file" name="upload_file" accept="image/*">
+            <button type="submit">Сохранить</button>
+        </form>
+    </nav>
+</body>

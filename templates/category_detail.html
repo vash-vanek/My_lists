@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование категории</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Редактирование категории</h1>
+    <nav>
+        <a href="/all_categories_page">← Назад к категориям</a><br><br><br>
+
+        {% if category['id'] != 0 %}
+        <form method="post" action="/edit_category_page/{{ category['id'] }}">
+            <label>Название: </label>
+            <input type="text" name="name" value="{{ category['name'] }}" autocomplete="off" required><br>
+            <button type="submit">Сохранить</button>
+        </form>
+
+        <form method="post" action="/delete_category_page/{{ category['id'] }}">
+            <button type="submit">Удалить</button>
+        </form>
+        {% else %}
+        <p>Название: {{ category['name'] }}</p>
+        {% endif %}
+
+        <label>Заметки: </label><br>
+        {% for note in notes %}
+        <a href="/edit_note_page/{{ note['id'] }}">{{ note['title'] }} — {{ note['created_at'] }}</a>
+        <p>{{ note['content'] }}</p><br>
+        {% endfor %}
+    </nav>
+
+</body>
+</html>

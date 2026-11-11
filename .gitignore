@@ -1,0 +1,8 @@
+.env
+tracker.db
+__pycache__/
+*.pyc
+.venv/
+venv/
+static/avatars/*
+!static/avatars/.gitkeep
