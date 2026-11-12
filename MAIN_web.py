@@ -20,8 +20,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
 def read_root():
-    # Если пользователь зашел просто на сайт, кидаем его на главную страницу
-    return RedirectResponse(url="/main_page", status_code=303)
+    return RedirectResponse("/main_page", status_code=303)
 
 # --------------------- Выход-------------------------------------------
 @app.get("/logout")
